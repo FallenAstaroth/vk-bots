@@ -23,6 +23,6 @@
 ## Компиляция
 Чтобы собрать все в .exe файл используем команду:
 ```
-pyinstaller --onefile RaidBot.py
+pyinstaller --onefile RaidBot.py 
 ```
 Чтобы все работало - помещаем .exe файл и accounts.json в одну папку
