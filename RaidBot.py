@@ -84,7 +84,7 @@ if auth == 2:
         for a in urls:
             webbrowser.get(using='Chrome').open_new_tab(a)
     if browser == 2:
-        webbrowser.register('Opera', None, webbrowser.BackgroundBrowser(rf'C:\Users\{user}\opera autoupdate\CUsers{user}AppDataLocalProgramsOpera\installing\opera.exe'))
+        webbrowser.register('Opera', None, webbrowser.BackgroundBrowser(rf'C:\Users\{user}\AppData\Local\Programs\Opera\launcher.exe'))
         for a in urls:
             webbrowser.get(using='Opera').open_new_tab(a)
     if browser == 3:
