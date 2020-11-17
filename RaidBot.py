@@ -4,12 +4,11 @@ import getpass
 import time
 import json
 import webbrowser
-import text
+import text as t
 import random
 from threading import Thread
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 
-t = text
 
 with open('accounts.json', 'r') as file:
     data = json.loads(file.read())
@@ -49,8 +48,7 @@ def init_groups_to_chat(chat):
     for group in vk_groups_id:
         current_id += 1
         chat_id = 2000000000 + chat
-        r = "https://api.vk.com/method/bot.addBotToChat?access_token=" + vk_groups_pod_token[
-            0] + "&v=5.92&peer_id=" + str(chat_id) + "&bot_id=-" + group
+        r = "https://api.vk.com/method/bot.addBotToChat?access_token=" + vk_groups_pod_token[0] + "&v=5.92&peer_id=" + str(chat_id) + "&bot_id=-" + group
         urls.append(r)
 
 
@@ -89,8 +87,8 @@ if auth == 2:
     browser = int(input(t.input_3))
 
     if browser == 1:
-        webbrowser.register('Chrome', None, webbrowser.BackgroundBrowser(
-            rf'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'))
+        webbrowser.register('Chrome', None, 
+                            webbrowser.BackgroundBrowser(rf'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'))
         for a in urls:
             webbrowser.get(using='Chrome').open_new_tab(a)
     if browser == 2:
@@ -104,8 +102,8 @@ if auth == 2:
         for a in urls:
             webbrowser.get(using='Mozilla').open_new_tab(a)
     if browser == 4:
-        webbrowser.register('Yandex', None, webbrowser.BackgroundBrowser(
-            rf'C:\Users\{user}\AppData\Local\Yandex\YandexBrowser\Application\browser.exe'))
+        webbrowser.register('Yandex', None, 
+                            webbrowser.BackgroundBrowser(rf'C:\Users\{user}\AppData\Local\Yandex\YandexBrowser\Application\browser.exe'))
         for a in urls:
             webbrowser.get(using='Yandex').open_new_tab(a)
 
