@@ -4,7 +4,7 @@ import getpass
 import time
 import json
 import webbrowser
-import vk_api_bot.text as t
+import text as t
 import random
 from threading import Thread
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
