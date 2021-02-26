@@ -48,8 +48,7 @@ def init_groups_to_chat(chat):
     for group in vk_groups_id:
         current_id += 1
         chat_id = 2000000000 + chat
-        r = "https://api.vk.com/method/bot.addBotToChat?access_token=" + vk_groups_pod_token[
-            0] + "&v=5.92&peer_id=" + str(chat_id) + "&bot_id=-" + group
+        r = "https://api.vk.com/method/bot.addBotToChat?access_token=" + vk_groups_pod_token[0] + "&v=5.92&peer_id=" + str(chat_id) + "&bot_id=-" + group
         urls.append(r)
 
 
@@ -58,9 +57,9 @@ def bot(longpoll, vk_api):
         if event.type == VkBotEventType.MESSAGE_NEW:
             if event.object.peer_id != event.object.from_id:
                 while True:
-                    message = random.choice(t.flood)
-                    vk_api.messages.send(peer_id=event.object.peer_id, random_id=0, message=message, attachment='wall-196611266_1')
-                    time.sleep(0.5)
+                    sleep = random.uniform(0.199, 0.399)
+                    vk_api.messages.send(peer_id=event.object.peer_id, random_id=0, attachment='wall-196079784_129')
+                    time.sleep(sleep)
 
 
 user = getpass.getuser()
@@ -109,3 +108,4 @@ if auth == 2:
             webbrowser.get(using='Yandex').open_new_tab(a)
 
     print(t.print_4)
+    
