@@ -1,6 +1,6 @@
 import time
 import random
-from vkbottle_bot.config import *
+from config import *
 from vkbottle.api import API
 from vkbottle.bot import Bot, Message, run_multibot
 
