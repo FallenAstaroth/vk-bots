@@ -1,0 +1,26 @@
+aiohttp==3.7.4
+altgraph==0.17
+async-timeout==3.0.1
+attrs==20.3.0
+certifi==2020.6.20
+chardet==3.0.4
+choicelib==0.1.4
+click==7.1.2
+future==0.18.2
+idna==2.9
+multidict==5.1.0
+pefile==2019.4.18
+pip-tools==5.2.1
+pydantic==1.7.3
+PyInstaller==3.6
+pywin32-ctypes==0.2.0
+requests==2.24.0
+six==1.15.0
+typing-extensions==3.7.4.3
+urllib3==1.25.9
+vbml==1.1
+vk-api==11.8.0
+vkbottle @ https://github.com/timoniq/vkbottle/archive/master.zip
+vkbottle-types==0.1.24
+watchgod==0.7
+yarl==1.6.3
