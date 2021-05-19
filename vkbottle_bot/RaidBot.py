@@ -22,28 +22,30 @@ async def start_flood(message: Message):
 
 
 if __name__ == "__main__":
-    keyboard_text = "😀😁😂🤣😃😄😅😆😉😊😋😎😍😘😗😆😙😚☺🙂🤩🤗🤨🤔😐😑😶🙄😏😜🤐😔🤬😡😷😱😬😧🤤☹"
+    KEYBOARD_TEXT = Text("😀😁😂🤣😃😄😅😆😉😊😋😎😍😘😗😆😙😚☺🙂🤩🤗🤨🤔😐😑😶🙄😏😜🤐😔🤬😡😷😱😬😧🤤☹")
+    POSITIVE = KeyboardButtonColor.POSITIVE
+    NEGATIVE = KeyboardButtonColor.NEGATIVE
     KEYBOARD_WITH_BUILDER = (
         Keyboard(one_time=False, inline=False)
-        .add(Text(keyboard_text), color=KeyboardButtonColor.NEGATIVE)
+        .add(KEYBOARD_TEXT, color=NEGATIVE)
         .row()
-        .add(Text(keyboard_text), color=KeyboardButtonColor.POSITIVE)
+        .add(KEYBOARD_TEXT, color=POSITIVE)
         .row()
-        .add(Text(keyboard_text), color=KeyboardButtonColor.NEGATIVE)
+        .add(KEYBOARD_TEXT, color=NEGATIVE)
         .row()
-        .add(Text(keyboard_text), color=KeyboardButtonColor.POSITIVE)
+        .add(KEYBOARD_TEXT, color=POSITIVE)
         .row()
-        .add(Text(keyboard_text), color=KeyboardButtonColor.NEGATIVE)
+        .add(KEYBOARD_TEXT, color=NEGATIVE)
         .row()
-        .add(Text(keyboard_text), color=KeyboardButtonColor.POSITIVE)
+        .add(KEYBOARD_TEXT, color=POSITIVE)
         .row()
-        .add(Text(keyboard_text), color=KeyboardButtonColor.NEGATIVE)
+        .add(KEYBOARD_TEXT, color=NEGATIVE)
         .row()
-        .add(Text(keyboard_text), color=KeyboardButtonColor.POSITIVE)
+        .add(KEYBOARD_TEXT, color=POSITIVE)
         .row()
-        .add(Text(keyboard_text), color=KeyboardButtonColor.NEGATIVE)
+        .add(KEYBOARD_TEXT, color=NEGATIVE)
         .row()
-        .add(Text(keyboard_text), color=KeyboardButtonColor.POSITIVE)
+        .add(KEYBOARD_TEXT, color=POSITIVE)
         .get_json()
     )
     apis = (API(token) for token in TOKENS)
