@@ -1,8 +1,10 @@
-import time
-import random
-from config import *
-from vkbottle.api import API
-from vkbottle.bot import Bot, Message, run_multibot
+from random import uniform
+from time import sleep
+
+from vkbottle import API, Bot, Keyboard, KeyboardButtonColor, Text
+from vkbottle.bot import Message, run_multibot
+
+from config import TOKENS
 
 bot = Bot()
 
@@ -12,11 +14,37 @@ async def start_flood(message: Message):
 
     while True:
 
-        sleep = random.uniform(0.199, 0.399)
+        await message.answer(
+            "", "wall-196079784_129", keyboard=KEYBOARD_WITH_BUILDER
+        )
 
-        await message.answer("", "wall-196079784_129")
-
-        time.sleep(sleep)
+        sleep(uniform(0.199, 0.399))
 
 
-run_multibot(bot, apis=(API(TOKENS[0]), API(TOKENS[1])))
+if __name__ == "__main__":
+    keyboard_text = "😀😁😂🤣😃😄😅😆😉😊😋😎😍😘😗😆😙😚☺🙂🤩🤗🤨🤔😐😑😶🙄😏😜🤐😔🤬😡😷😱😬😧🤤☹"
+    KEYBOARD_WITH_BUILDER = (
+        Keyboard(one_time=False, inline=False)
+        .add(Text(keyboard_text), color=KeyboardButtonColor.NEGATIVE)
+        .row()
+        .add(Text(keyboard_text), color=KeyboardButtonColor.POSITIVE)
+        .row()
+        .add(Text(keyboard_text), color=KeyboardButtonColor.NEGATIVE)
+        .row()
+        .add(Text(keyboard_text), color=KeyboardButtonColor.POSITIVE)
+        .row()
+        .add(Text(keyboard_text), color=KeyboardButtonColor.NEGATIVE)
+        .row()
+        .add(Text(keyboard_text), color=KeyboardButtonColor.POSITIVE)
+        .row()
+        .add(Text(keyboard_text), color=KeyboardButtonColor.NEGATIVE)
+        .row()
+        .add(Text(keyboard_text), color=KeyboardButtonColor.POSITIVE)
+        .row()
+        .add(Text(keyboard_text), color=KeyboardButtonColor.NEGATIVE)
+        .row()
+        .add(Text(keyboard_text), color=KeyboardButtonColor.POSITIVE)
+        .get_json()
+    )
+    apis = (API(token) for token in TOKENS)
+    run_multibot(bot, apis=apis)
