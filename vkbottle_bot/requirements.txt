@@ -17,7 +17,7 @@ pywin32-ctypes==0.2.0
 requests==2.24.0
 six==1.15.0
 typing-extensions==3.7.4.3
-urllib3==1.25.9
+urllib3==1.26.5
 vbml==1.1
 vk-api==11.8.0
 vkbottle @ https://github.com/timoniq/vkbottle/archive/master.zip
