@@ -1,0 +1,14 @@
+
+{
+  "user_account": [
+    {
+      "pod_token": ""
+    }
+  ],
+  "group_accounts": [
+    {
+      "group_token": "",
+      "group_id": 0
+    }
+  ]
+}
