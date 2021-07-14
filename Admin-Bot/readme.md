@@ -74,45 +74,45 @@
 После регистрации нажимаем кнопку **Bash** и вводим в консоли команду ```pip3.7 install --user vk_api```
 <p align="left">
   <a href="">
-    <img src="Admin-Bot/docs/9.png" width="276px" style="display: inline-block;">
+    <img src="docs/9.png" width="276px" style="display: inline-block;">
   </a>
 </p>
 
 Далее возвращаемся на начальный экран (просто кликнув по логотипу сайта) и переходим в раздел **Web apps**.
 <p align="left">
   <a href="">
-    <img src="Admin-Bot/docs/1.png" width="209px" style="display: inline-block;">
+    <img src="docs/1.png" width="209px" style="display: inline-block;">
   </a>
 </p>
 
 Нажимаем кнопку **Add a new web app**.
 <p align="left">
   <a href="">
-    <img src="Admin-Bot/docs/2.png" width="298px" style="display: inline-block;">
+    <img src="docs/2.png" width="298px" style="display: inline-block;">
   </a>
 </p>
 
 Далее выбираем **Flask**, затем **Python 3.7** и кнопку жмем кноку **Next**.
 <p align="left">
   <a href="">
-    <img src="Admin-Bot/docs/3.png" width="624px" style="display: inline-block;">
+    <img src="docs/3.png" width="624px" style="display: inline-block;">
   </a>
   <a href="">
-    <img src="Admin-Bot/docs/4.png" width="624px" style="display: inline-block;">
+    <img src="docs/4.png" width="624px" style="display: inline-block;">
   </a>
 </p>
 
 Возвращаемся на начальный экран и переходим в раздел **Files**.
 <p align="left">
   <a href="">
-    <img src="Admin-Bot/docs/5.png" width="288px" style="display: inline-block;">
+    <img src="docs/5.png" width="288px" style="display: inline-block;">
   </a>
 </p>
 
 В левом меню выбираем **mysite/** и удаляем файл **flask_app.py**.
 <p align="left">
   <a href="">
-    <img src="Admin-Bot/docs/6.png" width="382px" style="display: inline-block;">
+    <img src="docs/6.png" width="382px" style="display: inline-block;">
   </a>
 </p>
 
@@ -121,7 +121,7 @@
 В левом меню вводим название **commands**, нажимаем **New directory** и загружаем в нее файлы из папки **commands**.
 <p align="left">
   <a href="">
-    <img src="Admin-Bot/docs/7.png" width="386px" style="display: inline-block;">
+    <img src="docs/7.png" width="386px" style="display: inline-block;">
   </a>
 </p>
 
