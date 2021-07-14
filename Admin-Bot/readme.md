@@ -142,7 +142,7 @@
 После этого в разделе **Web apps** нажимаем кнопку **Reload <ваш сайт>**.
 <p align="left">
   <a href="">
-    <img src="Admin-Bot/docs/8.png" width="312px" style="display: inline-block;">
+    <img src="docs/8.png" width="312px" style="display: inline-block;">
   </a>
 </p>
 
