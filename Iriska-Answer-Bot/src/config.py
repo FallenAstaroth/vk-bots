@@ -1,0 +1,3 @@
+TOKEN = ""
+MIN_SLEEP = 1
+MAX_SLEEP = 3
