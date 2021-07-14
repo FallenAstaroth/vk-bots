@@ -8,7 +8,7 @@ choicelib==0.1.4
 idna==3.1
 mc.py==3.1.1
 multidict==5.1.0
-pydantic==1.7.3
+pydantic==1.7.4
 typing-extensions==3.7.4.3
 vbml==1.1
 vkbottle @ https://github.com/timoniq/vkbottle/archive/master.zip
