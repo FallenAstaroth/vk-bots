@@ -92,7 +92,7 @@
   </a>
 </p>
 
-Далее выбираем **Flask**, затем **Python 3.7** и кнопку жмем кноку **Next**. Указываем имя **bot_app**.
+Далее выбираем **Flask**, затем **Python 3.7** и кнопку жмем кноку **Next**. Указываем имя **bot_app.py**.
 <p align="left">
   <a href="">
     <img src="docs/3.png" width="624px" style="display: inline-block;">
