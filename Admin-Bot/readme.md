@@ -92,7 +92,7 @@
   </a>
 </p>
 
-Далее выбираем **Flask**, затем **Python 3.7** и кнопку жмем кноку **Next**. Указываем имя **bot_app**..
+Далее выбираем **Flask**, затем **Python 3.7** и кнопку жмем кноку **Next**. Указываем имя **bot_app**.
 <p align="left">
   <a href="">
     <img src="docs/3.png" width="624px" style="display: inline-block;">
@@ -109,7 +109,7 @@
   </a>
 </p>
 
-В левом меню выбираем **mysite/** и удаляем файл **flask_app.py**.
+В левом меню выбираем **mysite/** и удаляем файл **bot_app.py**.
 <p align="left">
   <a href="">
     <img src="docs/6.png" width="382px" style="display: inline-block;">
