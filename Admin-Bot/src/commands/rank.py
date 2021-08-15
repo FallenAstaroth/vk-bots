@@ -1,11 +1,11 @@
 from utils.other import get_user, send_msg
 
 
-def ban_user(vk, db, peer_id, bot_id, from_id, split_text, data, admins, NOTICE):
+def add_admin(vk, db, peer_id, bot_id, from_id, split_text, data, owner_id, admins, NOTICE):
 
     try:
 
-        if from_id in admins:
+        if from_id == owner_id:
 
             if len(split_text) == 2:
 
@@ -27,16 +27,15 @@ def ban_user(vk, db, peer_id, bot_id, from_id, split_text, data, admins, NOTICE)
 
                 if user_id != -bot_id and user_id not in admins:
 
-                    db.insert_user_banlist(user_id)
+                    db.add_admin(user_id)
 
-                    vk.messages.removeChatUser(
-                        chat_id=peer_id - 2000000000,
-                        member_id=user_id,
-                    )
+                    admins.append(user_id)
+
+                    send_msg(vk, peer_id, '✅ Пользователь назначен администратором.', '')
 
                 else:
 
-                    if NOTICE == 1: send_msg(vk, peer_id, '❎ Невозможно забанить администратора.', '')
+                    if NOTICE == 1: send_msg(vk, peer_id, '❎ Пользователь уже является администратором.', '')
 
         else:
 
@@ -46,16 +45,16 @@ def ban_user(vk, db, peer_id, bot_id, from_id, split_text, data, admins, NOTICE)
 
     except:
 
-        if NOTICE == 1: send_msg(vk, peer_id, '❎ Не удалось забанить пользователя.', '')
+        if NOTICE == 1: send_msg(vk, peer_id, '❎ Не удалось назначить пользователя администратором.', '')
 
         return "ok"
 
 
-def unban_user(vk, db, peer_id, from_id, admins, split_text, data, NOTICE):
+def del_admin(vk, db, peer_id, from_id, split_text, data, owner_id, admins, NOTICE):
 
     try:
 
-        if from_id in admins:
+        if from_id == owner_id:
 
             if len(split_text) == 2:
 
@@ -75,15 +74,17 @@ def unban_user(vk, db, peer_id, from_id, admins, split_text, data, NOTICE):
 
             else:
 
-                if db.check_user_banlist(user_id) is False:
+                if user_id not in admins:
 
-                    send_msg(vk, peer_id, '❎ Пользователя нет в банлисте.', '')
+                    send_msg(vk, peer_id, '❎ Пользователь не является администратором.', '')
 
                 else:
 
-                    db.delete_user_banlist(user_id)
+                    db.del_admin(user_id)
 
-                    send_msg(vk, peer_id, '✅ Пользователь разбанен.', '')
+                    admins.remove(user_id)
+
+                    send_msg(vk, peer_id, '✅ Пользователь снят с должности администратора.', '')
 
         else:
 
@@ -93,6 +94,6 @@ def unban_user(vk, db, peer_id, from_id, admins, split_text, data, NOTICE):
 
     except:
 
-        if NOTICE == 1: send_msg(vk, peer_id, '❎ Не удалось разбанить пользователя.', '')
+        if NOTICE == 1: send_msg(vk, peer_id, '❎ Не удалось снять должность администратора с пользователя.', '')
 
         return "ok"

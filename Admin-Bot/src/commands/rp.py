@@ -22,7 +22,7 @@ def rp_user(vk, peer_id, from_id, split_text, data, NOTICE, RPS):
 
             if user_id is None:
 
-                if NOTICE == 1: return send_msg(vk, peer_id, '❎ Пользователь не указан', '')
+                if NOTICE == 1: send_msg(vk, peer_id, '❎ Пользователь не указан.', '')
 
             else:
 
@@ -41,14 +41,16 @@ def rp_user(vk, peer_id, from_id, split_text, data, NOTICE, RPS):
 
                     rp_action = rp_list[split_text[0]]["female"]
 
-                return send_msg(vk, peer_id, f"{smile} [id{from_id}|{name_a}] {rp_action} [id{user_id}|{name_b}]", '')
+                send_msg(vk, peer_id, f"{smile} [id{from_id}|{name_a}] {rp_action} [id{user_id}|{name_b}]", '')
 
         else:
 
-            if NOTICE == 1: return send_msg(vk, peer_id, '❎ Вы не можете использовать рп команды', '')
+            if NOTICE == 1: send_msg(vk, peer_id, '❎ Вы не можете использовать рп команды.', '')
+
+        return "ok"
 
     except:
 
-        if NOTICE == 1: return send_msg(vk, peer_id, '❎ Невозможно применить рп команду', '')
+        if NOTICE == 1: send_msg(vk, peer_id, '❎ Невозможно применить рп команду.', '')
 
-    return "ok"
+        return "ok"
