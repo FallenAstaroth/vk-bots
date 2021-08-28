@@ -1,7 +1,7 @@
 import random
 
 
-def send_msg(vk, peer_id, message, attachment):
+def send_msg(vk, peer_id, message, attachment: str = ''):
     return vk.messages.send(
         peer_id=peer_id,
         message=message,

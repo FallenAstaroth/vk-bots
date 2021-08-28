@@ -21,7 +21,7 @@ def add_admin(vk, db, peer_id, bot_id, from_id, split_text, data, owner_id, admi
 
             if user_id is None:
 
-                if NOTICE == 1: send_msg(vk, peer_id, '❎ Пользователь не указан.', '')
+                if NOTICE == 1: send_msg(vk, peer_id, '❎ Пользователь не указан.')
 
             else:
 
@@ -31,21 +31,21 @@ def add_admin(vk, db, peer_id, bot_id, from_id, split_text, data, owner_id, admi
 
                     admins.append(user_id)
 
-                    send_msg(vk, peer_id, '✅ Пользователь назначен администратором.', '')
+                    send_msg(vk, peer_id, '✅ Пользователь назначен администратором.')
 
                 else:
 
-                    if NOTICE == 1: send_msg(vk, peer_id, '❎ Пользователь уже является администратором.', '')
+                    if NOTICE == 1: send_msg(vk, peer_id, '❎ Пользователь уже является администратором.')
 
         else:
 
-            if NOTICE == 1: send_msg(vk, peer_id, '❎ Вы не являетесь администратором.', '')
+            if NOTICE == 1: send_msg(vk, peer_id, '❎ Вы не являетесь создателем.')
 
         return "ok"
 
     except:
 
-        if NOTICE == 1: send_msg(vk, peer_id, '❎ Не удалось назначить пользователя администратором.', '')
+        if NOTICE == 1: send_msg(vk, peer_id, '❎ Не удалось назначить пользователя администратором.')
 
         return "ok"
 
@@ -70,13 +70,13 @@ def del_admin(vk, db, peer_id, from_id, split_text, data, owner_id, admins, NOTI
 
             if user_id is None:
 
-                if NOTICE == 1: send_msg(vk, peer_id, '❎ Пользователь не указан.', '')
+                if NOTICE == 1: send_msg(vk, peer_id, '❎ Пользователь не указан.')
 
             else:
 
                 if user_id not in admins:
 
-                    send_msg(vk, peer_id, '❎ Пользователь не является администратором.', '')
+                    send_msg(vk, peer_id, '❎ Пользователь не является администратором.')
 
                 else:
 
@@ -84,16 +84,16 @@ def del_admin(vk, db, peer_id, from_id, split_text, data, owner_id, admins, NOTI
 
                     admins.remove(user_id)
 
-                    send_msg(vk, peer_id, '✅ Пользователь снят с должности администратора.', '')
+                    send_msg(vk, peer_id, '✅ Пользователь снят с должности администратора.')
 
         else:
 
-            if NOTICE == 1: send_msg(vk, peer_id, '❎ Вы не являетесь администратором.', '')
+            if NOTICE == 1: send_msg(vk, peer_id, '❎ Вы не являетесь создателем.')
 
         return "ok"
 
     except:
 
-        if NOTICE == 1: send_msg(vk, peer_id, '❎ Не удалось снять должность администратора с пользователя.', '')
+        if NOTICE == 1: send_msg(vk, peer_id, '❎ Не удалось снять должность администратора с пользователя.')
 
         return "ok"

@@ -13,7 +13,7 @@ def check_new_user(vk, db, peer_id, from_id, data, admins, NOTICE):
 
                 db.delete_user_banlist(user_id)
 
-                if NOTICE == 1: send_msg(vk, peer_id, '✅ Администратор добавил забаненого пользователя. Удаляю из банлиста.', '')
+                if NOTICE == 1: send_msg(vk, peer_id, '✅ Администратор добавил забаненого пользователя. Удаляю из банлиста.')
 
             else:
 
@@ -26,6 +26,6 @@ def check_new_user(vk, db, peer_id, from_id, data, admins, NOTICE):
 
     except:
 
-        if NOTICE == 1: send_msg(vk, peer_id, '❎ Не удалось исключить забаненого пользователя.', '')
+        if NOTICE == 1: send_msg(vk, peer_id, '❎ Не удалось исключить забаненого пользователя.')
 
         return "ok"

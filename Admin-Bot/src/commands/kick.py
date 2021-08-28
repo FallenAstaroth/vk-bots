@@ -21,7 +21,7 @@ def kick_user(vk, peer_id, bot_id, from_id, split_text, data, admins, NOTICE):
 
             if user_id is None:
 
-                if NOTICE == 1: send_msg(vk, peer_id, '❎ Пользователь не указан.', '')
+                if NOTICE == 1: send_msg(vk, peer_id, '❎ Пользователь не указан.')
 
             else:
 
@@ -34,17 +34,17 @@ def kick_user(vk, peer_id, bot_id, from_id, split_text, data, admins, NOTICE):
 
                 else:
 
-                    if NOTICE == 1: send_msg(vk, peer_id, '❎ Невозможно исключить администратора.', '')
+                    if NOTICE == 1: send_msg(vk, peer_id, '❎ Невозможно исключить администратора.')
 
         else:
 
-            if NOTICE == 1: send_msg(vk, peer_id, '❎ Вы не являетесь администратором.', '')
+            if NOTICE == 1: send_msg(vk, peer_id, '❎ Вы не являетесь администратором.')
 
         return "ok"
 
     except:
 
-        if NOTICE == 1: send_msg(vk, peer_id, '❎ Не удалось исключить пользователя.', '')
+        if NOTICE == 1: send_msg(vk, peer_id, '❎ Не удалось исключить пользователя.')
 
         return "ok"
 
@@ -62,6 +62,6 @@ def kick_banned_user(vk, peer_id, user_id, NOTICE):
 
     except:
 
-        if NOTICE == 1: send_msg(vk, peer_id, '❎ Не удалось исключить пользователя.', '')
+        if NOTICE == 1: send_msg(vk, peer_id, '❎ Не удалось исключить пользователя.')
 
         return "ok"

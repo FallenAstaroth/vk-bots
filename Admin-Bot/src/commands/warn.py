@@ -21,7 +21,7 @@ def warn_user(vk, db, peer_id, bot_id, from_id, split_text, data, admins, NOTICE
 
             if user_id is None:
 
-                if NOTICE == 1: send_msg(vk, peer_id, '❎ Пользователь не указан.', '')
+                if NOTICE == 1: send_msg(vk, peer_id, '❎ Пользователь не указан.')
 
             else:
 
@@ -33,19 +33,19 @@ def warn_user(vk, db, peer_id, bot_id, from_id, split_text, data, admins, NOTICE
 
                         db.insert_user_warnlist(user_id)
 
-                        send_msg(vk, peer_id, '✅ Пользователь получил 1/3 варнов.', '')
+                        send_msg(vk, peer_id, '✅ Пользователь получил 1/3 варнов.')
 
                     elif check == 1:
 
                         db.update_user_warnlist(user_id, 2)
 
-                        send_msg(vk, peer_id, '✅ Пользователь получил 2/3 варнов.', '')
+                        send_msg(vk, peer_id, '✅ Пользователь получил 2/3 варнов.')
 
                     elif check == 2:
 
                         db.delete_user_warnlist(user_id)
 
-                        send_msg(vk, peer_id, '✅ Пользователь получил 3/3 варнов.', '')
+                        send_msg(vk, peer_id, '✅ Пользователь получил 3/3 варнов.')
 
                         vk.messages.removeChatUser(
                             chat_id=peer_id - 2000000000,
@@ -54,17 +54,17 @@ def warn_user(vk, db, peer_id, bot_id, from_id, split_text, data, admins, NOTICE
 
                 else:
 
-                    if NOTICE == 1: send_msg(vk, peer_id, '❎ Невозможно заварнить администратора.', '')
+                    if NOTICE == 1: send_msg(vk, peer_id, '❎ Невозможно заварнить администратора.')
 
         else:
 
-            if NOTICE == 1: send_msg(vk, peer_id, '❎ Вы не являетесь администратором.', '')
+            if NOTICE == 1: send_msg(vk, peer_id, '❎ Вы не являетесь администратором.')
 
         return "ok"
 
     except:
 
-        if NOTICE == 1: send_msg(vk, peer_id, '❎ Не удалось заварнить пользователя.', '')
+        if NOTICE == 1: send_msg(vk, peer_id, '❎ Не удалось заварнить пользователя.')
 
         return "ok"
 
@@ -89,28 +89,28 @@ def unwarn_user(vk, db, peer_id, from_id, admins, split_text, data, NOTICE):
 
             if user_id is None:
 
-                if NOTICE == 1: send_msg(vk, peer_id, '❎ Пользователь не указан.', '')
+                if NOTICE == 1: send_msg(vk, peer_id, '❎ Пользователь не указан.')
 
             else:
 
                 if db.check_user_warnlist(user_id) is False:
 
-                    send_msg(vk, peer_id, '❎ Пользователя нет в варнлисте.', '')
+                    send_msg(vk, peer_id, '❎ Пользователя нет в варнлисте.')
 
                 else:
 
                     db.delete_user_warnlist(user_id)
 
-                    send_msg(vk, peer_id, '✅ Пользователь разварнен.', '')
+                    send_msg(vk, peer_id, '✅ Пользователь разварнен.')
 
         else:
 
-            if NOTICE == 1: send_msg(vk, peer_id, '❎ Вы не являетесь администратором.', '')
+            if NOTICE == 1: send_msg(vk, peer_id, '❎ Вы не являетесь администратором.')
 
         return "ok"
 
     except:
 
-        if NOTICE == 1: send_msg(vk, peer_id, '❎ Не удалось разварнить пользователя.', '')
+        if NOTICE == 1: send_msg(vk, peer_id, '❎ Не удалось разварнить пользователя.')
 
         return "ok"

@@ -157,3 +157,51 @@ class SqliteDataBaseAPI:
 
         cursor.close()
         connection.close()
+
+    def update_emoji_limit(self, emojis_limit):
+
+        with connect(self.database) as connection:
+            cursor = connection.cursor()
+            cursor.execute("UPDATE settings SET emojis_limit = %d" % emojis_limit)
+
+            connection.commit()
+
+        cursor.close()
+        connection.close()
+
+    def check_ban_words(self, word):
+
+        with connect(self.database) as connection:
+
+            cursor = connection.cursor()
+            cursor.execute("SELECT count(word) FROM banwords WHERE word = '%s'" % word)
+
+            result = cursor.fetchone()[0]
+
+            if result == 0:
+                return False
+
+            if result == 1:
+                return True
+
+    def insert_ban_words(self, word):
+
+        with connect(self.database) as connection:
+            cursor = connection.cursor()
+            cursor.execute("INSERT INTO banwords(word) VALUES ('%s')" % word)
+
+            connection.commit()
+
+        cursor.close()
+        connection.close()
+
+    def delete_ban_words(self, word):
+
+        with connect(self.database) as connection:
+            cursor = connection.cursor()
+            cursor.execute("DELETE FROM banwords WHERE word = '%s'" % word)
+
+            connection.commit()
+
+        cursor.close()
+        connection.close()
