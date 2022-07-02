@@ -1,31 +1,29 @@
 **Инструкция к каждому боту находится в соответствующей директории.**
 
-## Admin-Bot
-**[Рабочий][Рефакторинг]**
+## Hater
+<div align="left">
+ <img alt="Status" src="https://img.shields.io/badge/Status-Frozen-blue">
+</div>
 
-Бот администратор для беседы вк на Callback API.
+Гневно комментирует сообщения людей из хейт листа в беседах и лс.
 
-## Demotivator-Bot
-**[Рабочий][Рефакторинг]**
+## Iriska answer
+<div align="left">
+ <img alt="Status" src="https://img.shields.io/badge/Status-Frozen-blue">
+</div>
 
-Бот, который создает мемы-демотиваторы из заданого текста и картинки.
+Решает примеры [Ириска Кошкина | Bot](https://vk.com/club173471303).
 
-## Hater-Bot
-**[Рабочий][Временная заморозка]**
+## Viktorina answer
+<div align="left">
+ <img alt="Status" src="https://img.shields.io/badge/Status-Frozen-blue">
+</div>
 
-Бот, который гневно комментирует сообщения людей из хейт листа в беседах и лс.
+Отгадывает слова [Викторина](https://vk.com/club170763395).
 
-## Iriska-Answer
-**[Рабочий][Временная заморозка]**
+## Message generator
+<div align="left">
+ <img alt="Status" src="https://img.shields.io/badge/Status-Frozen-blue">
+</div>
 
-Бот, который решает примеры [Ириска Кошкина | Bot](https://vk.com/iriskakoshkinabot).
-
-## Message-Generator
-**[Рабочий][Временная заморозка]**
-
-Бот, который генерирует рандомные сообщения на основе сообщений из беседы.
-
-## Raid-Bot
-**[Рабочий][Временная заморозка]**
-
-Бот рейдер для бесед.
+Генерирует рандомные сообщения на основе сообщений из беседы.
