@@ -2,6 +2,13 @@
 
 **В связи с долгим отсутствием обновлений некоторые функции могут не работать если статус отличается от `Active`**
 
+## Admin
+<div align="left">
+ <img alt="Status" src="https://img.shields.io/badge/Status-Frozen-blue">
+</div>
+
+Администратор для беседы вк на Callback API.
+
 ## Hater
 <div align="left">
  <img alt="Status" src="https://img.shields.io/badge/Status-Frozen-blue">
