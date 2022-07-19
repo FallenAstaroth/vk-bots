@@ -7,7 +7,7 @@
  <img alt="Status" src="https://img.shields.io/badge/Status-Frozen-blue">
 </div>
 
-Администратор для беседы вк на Callback API.
+Администрирует беседу вк используя Callback API.
 
 ## Hater
 <div align="left">
