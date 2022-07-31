@@ -9,11 +9,12 @@ from vk_api.longpoll import VkEventType
 
 class Worker(Thread):
 
-    def __init__(self, peer_id: int, config, longpoll, vk):
+    def __init__(self, peer_id: int, config, longpoll, vk, logger):
         Thread.__init__(self, name=str(peer_id))
 
         self.longpoll = longpoll
         self.vk = vk
+        self.logger = logger
 
         self.config = config
         self.peer_id = 2000000000 + peer_id
@@ -45,11 +46,13 @@ class Worker(Thread):
                                 sleep(randint(self.config["MIN_SLEEP"], self.config["MAX_SLEEP"]))
                                 self.vk.messages.send(peer_id=event.peer_id, message=answer, random_id=0)
 
+                            self.logger.logging(answer)
+
                         else:
                             pass
 
             except Exception as e:
-                print(repr(e))
+                self.logger.write_error("", answer, str(repr(e)))
 
     def __send_request(self, question: str):
 
@@ -73,7 +76,7 @@ class Worker(Thread):
                 return variant_3
 
         except Exception as e:
-            print(repr(e))
+            self.logger.write_error(page.text, f"{variant_1}::{variant_2}::{variant_3}", str(repr(e)))
 
     def run(self):
 
@@ -82,4 +85,4 @@ class Worker(Thread):
             self.__start_polling()
 
         except Exception as e:
-            print(repr(e))
+            self.logger.write_error("", "", str(repr(e)))
